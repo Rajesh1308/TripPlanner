@@ -6,14 +6,44 @@
     <title>Trip Planner</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #c8ffc3;
+            color: #096700;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: list-group-item;
+            border-color: #00c735;
+        }
+        .btn-primary:hover {
+            background-color: #028117;
+            border-color: #00b330;
+        }
         .card {
+            background: #d6ffd7;
+            color: #008a10;
+            border: none;
             margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .list-group-item {
+            background-color: #22e239;
         }
     </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Trip Planner</h2>
+        <h2 class="text-center mb-4">🌍 Trip Planner 🚀</h2>
         <form id="tripForm" class="mb-4">
             <div class="mb-3">
                 <label for="destination" class="form-label">Destination</label>
@@ -31,7 +61,7 @@
                 <label for="budget" class="form-label">Budget (USD)</label>
                 <input type="number" class="form-control" id="budget" required>
             </div>
-            <button type="submit" class="btn btn-primary">Generate Itinerary</button>
+            <button type="submit" class="btn btn-primary w-100">Generate Itinerary</button>
         </form>
         <div id="responseContainer" class="mt-4"></div>
     </div>
@@ -64,10 +94,11 @@
 
         function displayItinerary(data) {
             let html = `<h3 class="text-center">Trip to ${data.destination}</h3>`;
-            html += `<p><strong>Budget:</strong> $${data.budget}</p>`;
+            html += `<p><strong>Budget:</strong> $${data.budget}</p>
+                        <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2019/04/Feature-image-happy-family.jpg" alt="Vacation Image">`;
             html += `<h4>Must Visit Places</h4><ul class="list-group">`;
             data.mustVisit.forEach(place => {
-                html += `<li class="list-group-item">${place}</li>`;
+                html += `<li class="list-group-item text-white">${place}</li>`;
             });
             html += `</ul>`;
             

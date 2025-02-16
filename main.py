@@ -43,6 +43,7 @@ def generate_trip_plan():
     - Provide local transportation details and estimated costs.
     - Output JSON with a flat structure for readability.
     - The format of JSON should strictly follow the example JSON format.
+    - The activities for each day should start with an uppercase letter.
     
     ### Example Responses:
     1. {{
