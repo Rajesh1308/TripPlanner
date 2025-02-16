@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-import os
+from waitress import serve
 from groq import Groq
 import json
 
@@ -107,4 +107,5 @@ def generate_trip_plan():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    serve(app, host="0.0.0.0", port=80)
+
